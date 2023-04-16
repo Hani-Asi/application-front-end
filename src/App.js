@@ -1,7 +1,13 @@
-import LoginForm from "./components/LoginForm";
+import LoginForm from "./components/LoginForm/index.js";
+import SignupForm from "./components/SignupForm/index.js";
 
 function App() {
-  return <LoginForm />;
+  return (
+    <>
+      <SignupForm />
+      <LoginForm />
+    </>
+  );
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import LoginForm from "../components/LoginForm.js";
+import LoginForm from "../components/LoginForm/index.js";
 
 export default {
   title: "Component/LoginForm",

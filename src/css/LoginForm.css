@@ -1,54 +1,20 @@
-.field {
-  margin: 10px 0;
-  position: relative;
-  font-size: 14px;
-  width: 100%;
-  text-overflow: ellipsis;
-}
-
-/*=================== input ===================*/
-label {
-  position: absolute;
-  pointer-events: none;
-  left: 10px;
-  padding-bottom: 15px;
-  line-height: 6px;
-  transform: translateY(10px);
-  transition: all ease-out 0.1s;
-  font-size: 14px;
-  color: #999;
-  padding-top: 6px;
-}
-input::placeholder {
-  visibility: hidden;
-}
-.login-form ::-moz-placeholder {
-  color: transparent;
-}
-input:not(:placeholder-shown) + label {
-  transform: translateY(0);
-  font-size: 11px;
-}
-input:not(:placeholder-shown) {
-  padding-top: 14px;
-  padding-bottom: 2px;
-}
-
 /*============= input error text =============*/
 .inputError {
-  height: 14px;
+  height: 15px;
   overflow-y: hidden;
-  bottom: 50px;
   margin-left: 8px;
+  top: 0;
+  position: relative;
 }
 .inputError .inputErrorText {
   font-size: 12px;
   color: red;
   line-height: 1;
-  animation-name: inputErrorAnimation;
+  animation-name: errorAnimation;
   animation-duration: 1s;
+  top: -12px;
 }
-@keyframes inputErrorAnimation {
+@keyframes errorAnimation {
   from {
     color: white;
     transform: translateY(-14px);
@@ -56,83 +22,4 @@ input:not(:placeholder-shown) {
   to {
     transform: translateY(0);
   }
-}
-
-/*====== signUpButton and forgotPassword ======*/
-.other {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
-/*=============== sign up button ===============*/
-.button {
-  position: relative;
-  text-align: center;
-  padding: 0.5rem;
-  border: 1px solid transparent;
-  color: #fff;
-  font-weight: 600;
-  display: block;
-  width: 100%;
-  height: 40px;
-  font-size: 16px;
-  border-radius: 10px;
-  outline: none;
-  background-color: #946cee;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-.button:active {
-  background-color: #a53cef;
-}
-.button__text {
-  font: bold 18px "Quicksand", san-serif;
-  color: white;
-  transition: all 0.2s;
-}
-.button--loading .button__text {
-  visibility: hidden;
-  opacity: 0;
-}
-.button--loading::after {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  border: 4px solid transparent;
-  border-top-color: white;
-  border-radius: 50%;
-  animation: button-loading-spinner 1s ease infinite;
-}
-@keyframes button-loading-spinner {
-  from {
-    transform: rotate(0turn);
-  }
-  to {
-    transform: rotate(1turn);
-  }
-}
-
-/*=============== forgot password ===============*/
-.forgot {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 13px;
-  color: gray;
-  text-decoration: none;
-}
-
-/*=================== sign up ===================*/
-.signup {
-  color: #a53cef;
-  font-weight: 700;
-  text-decoration: none;
 }

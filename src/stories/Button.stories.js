@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+import Button from "../components/Button/index.js";
 
 export default {
   title: "Component/Button",
@@ -9,5 +9,5 @@ export default {
 };
 
 export const Default = (args) => {
-  return <Button {...args} />;
+  return <Button {...args}>Log in</Button>;
 };
