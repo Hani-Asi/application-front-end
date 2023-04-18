@@ -6,7 +6,6 @@ import Input from "../Input/index.js";
 import InputError from "../InputError/index.js";
 import Button from "../Button/index.js";
 import useForm from "../../hooks/useForm.js";
-import "../../css/LoginForm.css";
 import styled from "@emotion/styled";
 
 const SignupForm = ({ onSubmit }) => {

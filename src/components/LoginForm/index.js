@@ -6,7 +6,6 @@ import Input from "../Input/index.js";
 import Button from "../Button/index.js";
 import InputError from "../InputError/index.js";
 import useForm from "../../hooks/useForm.js";
-import "../../css/LoginForm.css";
 import styled from "@emotion/styled";
 
 const LoginForm = ({ onSubmit }) => {
@@ -38,11 +37,7 @@ const LoginForm = ({ onSubmit }) => {
               onChange={handleChange}
               label={"ID"}
             />
-            {errors.userid && (
-              <InputError>
-                <div className="inputErrorText">{errors.userid}</div>
-              </InputError>
-            )}
+            {errors.userid && <InputError>{errors.userid}</InputError>}
             <Input
               type="password"
               name="password"
@@ -51,11 +46,7 @@ const LoginForm = ({ onSubmit }) => {
               onChange={handleChange}
               label={"Password"}
             />
-            {errors.password && (
-              <InputError>
-                <div className="inputErrorText">{errors.password}</div>
-              </InputError>
-            )}
+            {errors.password && <InputError>{errors.password}</InputError>}
             <Other>
               <Button type="submit" disabled={isLoading}>
                 <span className="button__text">Log in</span>

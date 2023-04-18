@@ -27,13 +27,11 @@ const ErrorText = styled.div`
   line-height: 1;
   display: flex;
   align-items: center;
-  animation-name: errorAnimation;
+  animation-name: ${errorAnimation};
   animation-duration: 1s;
-  top: -12px;
 `;
 
 const InputError = ({ children }) => {
-  console.log(children);
   return (
     <>
       <StyledError className="inputError">
