@@ -1,9 +1,11 @@
-import styled, { keyframes } from "styled-components";
+import React from "react";
+import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
 
 const errorAnimation = keyframes`
   from {
-    color: red;
-    transform: translateY(-14px);
+    color: white;
+    transform: translateY(-12px);
   }
   to {
     transform: translateY(0);
@@ -12,27 +14,30 @@ const errorAnimation = keyframes`
 
 const StyledError = styled.div`
   .inputError {
-    position: relative;
-    height: 15px;
-    top: 0;
+    height: 12px;
     overflow-y: hidden;
-  }
-
-  .inputError .errorText {
-    font-size: 12px;
-    line-height: 1;
-    top: -12px;
-    color: red;
-    animation-duration: 1s;
-    animation: ${errorAnimation} 1s;
+    margin-left: 8px;
+    box-sizing: border-box;
   }
 `;
 
-const InputError = () => {
+const ErrorText = styled.div`
+  font-size: 12px;
+  color: red;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  animation-name: errorAnimation;
+  animation-duration: 1s;
+  top: -12px;
+`;
+
+const InputError = ({ children }) => {
+  console.log(children);
   return (
     <>
       <StyledError className="inputError">
-        <StyledError className="errorText" />
+        <ErrorText className="errorText">{children}</ErrorText>
       </StyledError>
     </>
   );

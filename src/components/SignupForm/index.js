@@ -47,7 +47,7 @@ const SignupForm = ({ onSubmit }) => {
               onChange={handleChange}
               label={"User Name"}
             />
-            {errors.name && <InputError>{errors.name}error</InputError>}
+            {errors.name && <InputError>{errors.name}</InputError>}
             <Input
               type="text"
               name="email"
@@ -55,11 +55,7 @@ const SignupForm = ({ onSubmit }) => {
               onChange={handleChange}
               label={"Email"}
             />
-            {errors.email && (
-              <div className="inputError">
-                <div className="inputErrorText">{errors.email}</div>
-              </div>
-            )}
+            {errors.email && <InputError>{errors.email}</InputError>}
             <Input
               type="text"
               name="userid"
